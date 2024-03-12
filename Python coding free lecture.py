@@ -205,3 +205,167 @@ color = "빨간"
 print(f"나는 {age}살이며, {color}색을 좋아해요.")
 
 #탈출문자
+print("백문이 불여일견 \n백견이 불여일타")
+
+#\"\'
+#저는 "정민서" 입니다.
+print("저는 \"정민서\" 입니다.")
+
+#\\ : 문장 내에서 \
+print("C:\\Users\\t\Documents\\Git\\pythonProject")
+
+#\r : 커서를 맨 앞으로 이동
+print("Red Apple\rpine")
+
+# \b : 백스페이스 (한글자 삭제)
+print("Redd\bApple")
+
+# \t : 탭
+print("Red\tApple")
+
+#quiz 사이트별로 비밀번호를 만들어 주는 프로그램을 작성하시오
+
+#예) http://naver.com
+#규칙1 : http:// 부분은 제외
+#규칙2 : 처음 만나는 점(.) 이후 부분은 제외
+#규칙3 : 남은 글자 중 처음 세자리 + 글자 갯수 + 글자 내 'e' 갯수 + "!"로 구성
+#예) 생성한 비밀번호 : nav51!
+
+#my code
+site = "http://naver.com"
+rule1 = site[7:]
+print(rule1)
+rule2 = rule1[:-4]
+print(rule2)
+rule3 = rule2[:3] + str(len(rule2)) + str(rule2.count("e")) +"!"
+print(rule3)
+
+url = "http://naver.com"
+my_str = url.replace("http://","") #규칙1
+#print(my_str)
+my_str = my_str[:my_str.index(".")] #규칙2
+#print(my_str)
+password = my_str[:3] + str(len(my_str)) + str(my_str.count("e")) + "!"
+print("{0} 의 비밀번호는 {1}입니다.".format(url, password))
+
+# 3/12
+#리스트 []
+
+#지하철 칸별로 10명, 20명, 30명
+subway1 = 10
+subway2 = 20
+subway3 = 30
+
+subway = [10, 20, 30]
+print(subway)
+
+subway = ["유재석", "조세호", "박명수"]
+print(subway)
+
+#조세호씨가 몇 번째 칸에 타고 있는가?
+print(subway.index("조세호"))
+
+#하하씨가 다음 정류장에서 다음 칸에 탐
+subway.append("하하")
+print(subway)
+
+# 정형돈씨를 유재석 / 조세호 사이에 태워봄
+subway.insert(1, "정형돈")
+
+#지하철에 있는 사람을 한 명씩 뒤에서 꺼냄
+print(subway.pop())
+print(subway) #하하
+
+print(subway.pop())
+print(subway) #박명수
+
+print(subway.pop())
+print(subway) #조세호
+
+#같은 이름의 사람이 몇 명 있는지 확인
+subway.append("유재석")
+print(subway)
+print(subway.count("유재석"))
+
+# 정렬도 가능
+num_list = [5,2,4,3,1]
+num_list.sort()
+print(num_list)
+
+# 순서 뒤집기 가능
+num_list.reverse()
+print(num_list)
+
+# 모두 지우기
+num_list.clear()
+print(num_list)
+
+# 다양한 자료형 함께 사용
+num_list = [5,2,4,3,1]
+mix_list = ["조세호", 20, True]
+print(mix_list)
+
+# 리스트 확장
+num_list.extend(mix_list)
+print(num_list)
+
+# 사전
+cabinet = {3:"유재석", 100:"김태호"}
+print(cabinet[3])
+print(cabinet[100])
+
+print(cabinet.get(3))
+print(cabinet[5]) #오류 및 프로그램 종료
+
+print(cabinet.get(5)) #None 출력 후 계속 실행
+print(cabinet.get(5, "사용 가능"))
+
+print(3 in cabinet) #X in 변수  True
+print(5 in cabinet) #X in 변수  False
+
+cabinet = {"A-3":"유재석", "B-100":"김태호"}
+print(cabinet["A-3"])
+print(cabinet["B-100"])
+
+# 새 손님
+print(cabinet)
+cabinet["A-3"] = "김종국"
+cabinet["C-20"] = "조세호"
+print(cabinet)
+
+# 간 손님
+del cabinet["A-3"]
+print(cabinet)
+
+# key 들만 출력
+print(cabinet.keys())
+
+# value 들만 출력
+print(cabinet.values())
+
+# key, value 쌍으로 출력
+print(cabinet.items())
+
+# 목욕탕 페점
+cabinet.clear()
+
+# 튜플 -> 내용 변경 및 삭제가 안됨 근데 리스트보다 속도가 빠름
+menu = ("돈까스", "치즈까스")
+print(menu[0])
+print(menu[1])
+
+menu.add("생선까스") #오류
+
+# name = "김종국"
+# age = 20
+# hobby = "코딩"
+# print(name, age, hobby)
+
+name, age, hobby = ("김종국", 20, "코딩")
+print(name, age, hobby)
+
+
+
+
+
+
